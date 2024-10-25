@@ -1,10 +1,11 @@
 import streamlit as st
+import numpy as np
 from utils.data_preprocessing import load_and_process, scale_data, split_data, create_matrix
 from model.BI_LSTM_GRU_CNN import build_model
 from utils.model_training import train_model, calculate_errors
 from utils.plotting import plot_predictions, plot_future_predictions, plot_residuals
 
-st.title('Stock Prediction App')
+st.title('Stock Prediction for Nifty 50 using a Hybrid BILSTM-CNN-GRU Model ')
 
 uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
 if uploaded_file is not None:
@@ -26,6 +27,9 @@ if uploaded_file is not None:
     plot_residuals(data, test_predict, scaler, time_step, len(train_predict))
 
 
-    st.image('plot_predictions.png')
-    st.image('plot_residuals.png')
+    st.image('plots/plot_predictions.png')
+    st.image('plots/plot_residuals.png')
+    mae = calculate_errors(y_test,test_predict)
+    st.write(f"MAE Value:{mae}")
     st.write("Training completed.")
+    

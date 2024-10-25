@@ -17,10 +17,10 @@ def plot_predictions(data, train_predict, test_predict, scaler, time_step):
     plt.xlabel('Time')
     plt.ylabel('Stock Price')
     plt.legend()
-    plt.savefig('plot_predictions.png')
+    plt.savefig('plots/plot_predictions.png')
     plt.close()
 
-def plot_future_predictions(data, train_predict, test_predict, future_predictions, scaler, time_step):
+def plot_future_predictions(data, train_predict,future_predictions, scaler, time_step):
     trainPredictPlot = np.empty_like(data)
     trainPredictPlot[:, :] = np.nan
     trainPredictPlot[time_step:len(train_predict) + time_step, :] = train_predict
@@ -37,7 +37,7 @@ def plot_future_predictions(data, train_predict, test_predict, future_prediction
     plt.xlabel("Days")
     plt.ylabel("Price")
     plt.legend()
-    plt.savefig('plot_future_predictions.png')
+    plt.savefig('plots/plot_future_predictions.png')
     plt.close()
 
 def plot_residuals(data, test_predict, scaler, time_step, train_predict_len):
@@ -53,5 +53,5 @@ def plot_residuals(data, test_predict, scaler, time_step, train_predict_len):
     plt.title("Residuals for Test Predictions")
     plt.xlabel("Days")
     plt.ylabel("Residual Value (Difference)")
-    plt.savefig('plot_residuals.png')
+    plt.savefig('plots/plot_residuals.png')
     plt.close()

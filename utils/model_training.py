@@ -1,5 +1,5 @@
 import math
-from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_absolute_error,root_mean_squared_error
 
 def train_model(model, x_train, y_train, x_test, y_test, epochs=15, batch_size=64):
     try:
@@ -13,9 +13,9 @@ def train_model(model, x_train, y_train, x_test, y_test, epochs=15, batch_size=6
 
 def calculate_errors(y_true, y_pred):
     try:
-      rmse = math.sqrt(mean_absolute_error(y_true, y_pred))
+      mae = math.sqrt(mean_absolute_error(y_true, y_pred))
     
     except Exception as e:
       raise Exception(f"Cannot calculate the error. Error:{e}")
     
-    return rmse
+    return mae
