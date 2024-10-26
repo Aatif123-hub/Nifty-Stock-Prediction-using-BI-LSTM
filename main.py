@@ -10,8 +10,8 @@ submit =False
 
 dataset_option = st.selectbox("Select Dataset", ["Nifty 50 (2014-2024).csv", "Nifty 50 (2019-2024).csv"])
 if dataset_option:
-    epochs = st.number_input('Select number of epochs:', min_value=1, max_value=100, value=15, step=1)
-    batch_size = st.number_input('Select batch size:', min_value=16, max_value=256, value=64, step=1)
+    epochs = st.number_input('Select number of epochs', min_value=1, max_value=100, value=15, step=1)
+    batch_size = st.number_input('Select batch size', min_value=16, max_value=256, value=64, step=1)
     time_step = st.number_input('Select the timesteps',min_value=1,max_value=100,value=15,step=1)
     submit=st.button("Submit")
     if submit:
