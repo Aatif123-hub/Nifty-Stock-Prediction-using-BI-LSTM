@@ -2,7 +2,7 @@ import streamlit as st
 from utils.data_preprocessing import load_and_process, scale_data, split_data, create_matrix
 from model.BILSTM_GRU_CNN import build_model
 from utils.model_training import train_model, calculate_errors
-from utils.plotting import plot_predictions, plot_residuals,initial_histogram
+from utils.plotting import plot_predictions, plot_residuals,initial_LineGraph
 
 st.title('Stock Prediction for Nifty 50 Using a hybrid BILSTM-GRU-CNN Model')
 
@@ -29,7 +29,7 @@ if dataset_option:
      train_predict = scaler.inverse_transform(train_predict)
      test_predict = scaler.inverse_transform(test_predict)
 
-     initial_histogram(data)
+     initial_LineGraph(data)
      plot_predictions(data, train_predict, test_predict, scaler, time_step)
      plot_residuals(data, test_predict, scaler, time_step, len(train_predict))
 
