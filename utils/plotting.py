@@ -3,18 +3,10 @@ import numpy as np
 
 
 def initial_histogram(data):
+    plt.figure(figsize=(12, 6))
     plt.plot(data)
     plt.title(f"Closing price of Nifty 50")
-    plt.savefig('plots/initial_histogram.png')
-    plt.close()
-
-def plot_boxplot(data):
-    plt.figure(figsize=(12, 6))
-    plt.boxplot(data, patch_artist=True)
-    plt.title(f'Boxplot of Closing Prices')
-    plt.xlabel('Days')
-    plt.ylabel('Price')
-    plt.savefig('plots/boxplot_prices.png')
+    plt.savefig('plots/Initial Line Graph.png')
     plt.close()
 
 def plot_predictions(data, train_predict, test_predict, scaler, time_step):
@@ -34,7 +26,7 @@ def plot_predictions(data, train_predict, test_predict, scaler, time_step):
     plt.title('Actual vs Predicted')
     plt.ylabel('Stock Price')
     plt.legend()
-    plt.savefig('plots/plot_predictions.png')
+    plt.savefig('plots/predictions.png')
     plt.close()
 
 
@@ -51,5 +43,5 @@ def plot_residuals(data, test_predict, scaler, time_step, train_predict_len):
     plt.title("Residuals for Test Predictions")
     plt.xlabel("Days")
     plt.ylabel("Residual Value (Difference)")
-    plt.savefig('plots/plot_residuals.png')
+    plt.savefig('plots/residuals.png')
     plt.close()

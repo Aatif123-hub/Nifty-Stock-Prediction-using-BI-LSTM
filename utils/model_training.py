@@ -1,5 +1,5 @@
 import math
-from sklearn.metrics import mean_absolute_error,root_mean_squared_error
+from sklearn.metrics import mean_absolute_error,mean_squared_error
 
 def train_model(model, x_train, y_train, x_test, y_test, epochs, batch_size):
     try:

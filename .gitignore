@@ -1,4 +1,8 @@
 /venv/
 /.vscode/
+<<<<<<< HEAD
 /__pycache__/
 /plots/
+=======
+/plots/
+>>>>>>> experiment
