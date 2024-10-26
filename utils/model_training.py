@@ -1,7 +1,7 @@
 import math
 from sklearn.metrics import mean_absolute_error,root_mean_squared_error
 
-def train_model(model, x_train, y_train, x_test, y_test, epochs=15, batch_size=64):
+def train_model(model, x_train, y_train, x_test, y_test, epochs, batch_size):
     try:
       model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=epochs, batch_size=batch_size, verbose=1)
       train_predict = model.predict(x_train)
